@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Joel's Portfolio</title>
+    <link rel="stylesheet" href="styles/about-parallax.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
+    <script>
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+      };
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo.svg" alt="Logo">
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="work.html">Work</a>
+                <a href="about.html">About</a>
+                <a href="contact.html" class="active">Contact</a>
+                <a href="index.html">Homepage</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <div class="contact-intro">
+                <h1>Work with Me!</h1>
+                <div class="contact-info">
+                    <p>Got a project in mind or just wanna chat? Drop me an email, and I'll get back to you within a day! Not a fan of contact forms?</p>
+                    <p>No worries—just send a message to <a href="mailto:nathanaeljoel4@gmail.com">nathanaeljoel4@gmail.com</a></p>
+                </div>
+            </div>
+            
+            <div class="contact-container">
+                <form id="contactForm" class="contact-form" onsubmit="return handleSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group name-group">
+                            <label>Name *</label>
+                            <div class="name-inputs">
+                                <div class="input-wrapper">
+                                    <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                                    <span class="error-message" id="firstNameError"></span>
+                                </div>
+                                <div class="input-wrapper">
+                                    <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                                    <span class="error-message" id="lastNameError"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <div class="input-wrapper">
+                                <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                                <span class="error-message" id="emailError"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inquiry">What can I help you with? *</label>
+                            <div class="select-wrapper">
+                                <select id="inquiry" name="inquiry" required>
+                                    <option value="" disabled selected>Choose an option</option>
+                                    <option value="UI/UX">UI/UX</option>
+                                    <option value="Video Animation">Video Animation</option>
+                                    <option value="Graphic Design">Graphic Design</option>
+                                    <option value="Content Creation">Content Creation</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <span class="error-message" id="inquiryError"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message * <span class="char-count" id="messageCount">0/500</span></label>
+                        <div class="input-wrapper">
+                            <textarea id="message" name="message" placeholder="Tell me about your project or question..." required maxlength="500"></textarea>
+                            <span class="error-message" id="messageError"></span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loader"></span>
+                    </button>
+                </form>
+            </div>
+
+            <div id="successMessage" class="success-message hidden">
+                <div class="success-content">
+                    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                        <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                        <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                    </svg>
+                    <h3>Message Sent!</h3>
+                    <p>Thank you for reaching out. I'll get back to you within 24 hours.</p>
+                    <button class="close-success" onclick="hideSuccessMessage()">Close</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="logo">
+                <a href="#" onclick="scrollToTop(); return false;">
+                    <img src="assets/logo.svg" alt="Logo">
+                </a>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/joel-nathanael-marsahala-b0658b328/" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/linkedin.svg" alt="LinkedIn">
+                </a>
+                <a href="https://www.instagram.com/_joelnathanael/" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/instagram.svg" alt="Instagram">
+                </a>
+                <a href="https://www.google.com/search?q=joel+nathanael+marsahala&rlz=1C1SQJL_enID1129ID1129&oq=joel+nathanael+marsahala&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7Mg0IARAAGIYDGIAEGIoFMgcIAhAAGO8FMgoIAxAAGIAEGKIEMgcIBBAAGO8FMgcIBRAAGO8FMgYIBhBFGDwyBggHEEUYPNIBCDM4MDlqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/google.svg" alt="Google">
+                </a>
+            </div>
+        </div>
+        <p class="copyright">© Joel Nathanael, 2025.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 

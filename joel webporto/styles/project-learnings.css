@@ -1,0 +1,105 @@
+/* Project Learning Styles */
+.project-info {
+    position: relative;
+}
+
+.project-info h3 {
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.project-info h3:hover {
+    color: var(--color-yellow);
+}
+
+.learning-box {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%) translateX(20px);
+    width: 320px;
+    background: rgba(0, 0, 0, 0.95);
+    border-left: 3px solid var(--color-yellow);
+    padding: 1.5rem;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100;
+    pointer-events: none;
+}
+
+.project-info h3:hover + .learning-box,
+.learning-box:hover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(10px);
+    pointer-events: auto;
+}
+
+.learning-box::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 16px;
+    height: 16px;
+    background: rgba(0, 0, 0, 0.95);
+    border-left: 3px solid var(--color-yellow);
+    border-bottom: 3px solid var(--color-yellow);
+    border-radius: 2px;
+}
+
+.learning-box h4 {
+    color: var(--color-yellow);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.learning-box p {
+    color: var(--color-white);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+.learning-box ul {
+    color: var(--color-white);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding-left: 1.2rem;
+    margin-top: 0.75rem;
+}
+
+.learning-box li {
+    margin-bottom: 0.5rem;
+}
+
+.learning-box li:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1200px) {
+    .learning-box {
+        left: 50%;
+        top: 100%;
+        transform: translateX(-50%) translateY(20px);
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .learning-box::before {
+        left: 50%;
+        top: -8px;
+        transform: translateX(-50%) rotate(45deg);
+    }
+
+    .project-info h3:hover + .learning-box,
+    .learning-box:hover {
+        transform: translateX(-50%) translateY(10px);
+    }
+} 

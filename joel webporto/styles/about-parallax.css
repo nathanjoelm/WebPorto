@@ -1,0 +1,534 @@
+/* About Page Hero Parallax Styles */
+
+/* Body class for the about page */
+body.about-page {
+    background-color: var(--color-white);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header transparency for parallax effect */
+body.about-page header {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.about-page header.transparent {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+body.about-page header.scrolled {
+    background-color: var(--color-black);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Adjust main content spacing */
+body.about-page main {
+    padding-top: 0;
+}
+
+.about-hero-parallax {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: 0;  /* Adjust for the fixed header */
+}
+
+.about-hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transform: translateZ(0);
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+}
+
+.about-hero-image.loaded {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.about-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0.6) 50%,
+        var(--color-black) 100%
+    );
+    z-index: 1;
+}
+
+.about-hero-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5rem 4rem;
+    z-index: 2;
+    color: var(--color-white);
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.8) 70%,
+        var(--color-black) 100%
+    );
+    transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+}
+
+.about-hero-content.loaded {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.about-hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.about-hero-content h1::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: var(--color-yellow);
+    margin-top: 1rem;
+}
+
+/* Modern transition section */
+.about-section {
+    position: relative;
+    padding: 0;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        var(--color-black) 0%,
+        var(--color-black) 30%,
+        var(--color-white) 100%
+    );
+    z-index: -1;
+}
+
+.about-section .about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding: 6rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.about-section .about-text {
+    position: relative;
+}
+
+.about-section .about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: var(--color-white);
+    position: relative;
+    z-index: 2;
+}
+
+.about-section .services {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-section .services h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--color-yellow);
+    text-shadow: none;
+}
+
+.about-section .service-item {
+    margin-bottom: 1.5rem;
+    border-left: 2px solid rgba(255, 255, 255, 0.2);
+    padding-left: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.about-section .service-item:hover {
+    border-left-color: var(--color-yellow);
+    transform: translateX(5px);
+}
+
+.about-section .service-item .service-title {
+    color: var(--color-white);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.about-section .service-item .service-content p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+.about-section .service-icon {
+    color: var(--color-yellow);
+    margin-right: 0.5rem;
+}
+
+/* Color overlay for transition */
+.color-transition {
+    position: relative;
+    background: var(--color-white);
+    padding-top: 6rem;
+    margin-top: -3rem;
+    border-radius: 50% 50% 0 0 / 100px;
+    z-index: 3;
+}
+
+/* Tools section in white background */
+body.about-page .tools {
+    background-color: var(--color-white);
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    color: var(--color-black);
+    position: relative;
+    z-index: 5;
+}
+
+body.about-page .tools-list span {
+    color: var(--color-black);
+}
+
+body.about-page .tools-list .separator {
+    color: var(--color-black);
+}
+
+/* Clients section in white background */
+body.about-page .clients {
+    background-color: var(--color-white);
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    position: relative;
+    z-index: 5;
+}
+
+body.about-page .clients h2 {
+    color: var(--color-black);
+}
+
+body.about-page .clients h2::after {
+    background-color: var(--color-yellow);
+}
+
+body.about-page .clients-intro {
+    color: var(--color-black);
+}
+
+body.about-page .client-card {
+    background-color: #f5f5f5;
+    color: var(--color-black);
+}
+
+body.about-page .client-logo {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+/* Testimonials section in white background */
+body.about-page .testimonials {
+    background-color: var(--color-white);
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    position: relative;
+    z-index: 5;
+}
+
+body.about-page .testimonials h2 {
+    color: var(--color-black);
+}
+
+body.about-page .testimonials h2::after {
+    background-color: var(--color-yellow);
+}
+
+body.about-page .testimonial-content blockquote {
+    color: var(--color-black);
+}
+
+body.about-page .client-name {
+    color: var(--color-black);
+}
+
+body.about-page .client-position,
+body.about-page .testimonial-date {
+    color: #555;
+}
+
+body.about-page .nav-arrow {
+    color: var(--color-black);
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+body.about-page .nav-dot {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+body.about-page .nav-dot.active {
+    background-color: var(--color-black);
+}
+
+/* General fade animations for sections */
+.fade-out {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Apply fade transitions to all major sections */
+.tools, .clients, .testimonials {
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Staggered animations for different sections */
+.tools.fade-in {
+    transition-delay: 0.2s;
+}
+
+.clients.fade-in {
+    transition-delay: 0.4s;
+}
+
+.testimonials.fade-in {
+    transition-delay: 0.6s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Adjust footer for about page */
+body.about-page footer {
+    background-color: var(--color-black);
+    margin-top: 0;
+    color: var(--color-white);
+}
+
+/* Media Queries */
+@media screen and (max-width: 992px) {
+    .about-section .about-content {
+        grid-template-columns: 1fr;
+        padding: 4rem 2rem;
+        gap: 3rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-hero-content {
+        padding: 3rem 2rem;
+    }
+    
+    .about-hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .about-section .about-content {
+        padding: 3rem 2rem;
+        gap: 2rem;
+    }
+    
+    body.about-page .tools,
+    body.about-page .clients,
+    body.about-page .testimonials {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
+    .color-transition {
+        margin-top: -2rem;
+        border-radius: 50% 50% 0 0 / 50px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-hero-parallax {
+        height: 80vh; /* Shorter on mobile */
+    }
+    
+    .about-hero-content {
+        padding: 2rem 1rem;
+    }
+    
+    .about-hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .about-section .about-content {
+        padding: 2rem 1rem;
+    }
+    
+    body.about-page .tools,
+    body.about-page .clients,
+    body.about-page .testimonials {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    
+    .color-transition {
+        margin-top: -1.5rem;
+        border-radius: 50% 50% 0 0 / 30px;
+    }
+}
+
+/* Make the section heading more visible */
+.about-section h1 {
+    color: var(--color-white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+}
+
+/* Testimonial nav (dots) above the cards */
+.testimonial-nav-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 0;
+    top: 0;
+    margin-bottom: 2rem;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.testimonial-nav {
+    display: flex;
+    gap: 1rem;
+    background: rgba(255,255,255,0.85);
+    border-radius: 2rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    padding: 0.5rem 1.5rem;
+    pointer-events: auto;
+}
+
+.nav-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #ccc;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.nav-dot.active {
+    background: var(--color-black);
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .testimonial-nav-wrapper {
+        margin-bottom: 1.2rem;
+    }
+    .testimonial-nav {
+        padding: 0.3rem 1rem;
+        gap: 0.7rem;
+    }
+    .nav-dot {
+        width: 11px;
+        height: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonial-nav-wrapper {
+        margin-bottom: 0.5rem;
+    }
+    .testimonial-nav {
+        padding: 0.2rem 0.7rem;
+        gap: 0.5rem;
+    }
+    .nav-dot {
+        width: 9px;
+        height: 9px;
+    }
+}
+
+/* Header hide/show on scroll */
+header {
+    transition: transform 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.35s, box-shadow 0.3s, filter 0.3s;
+    will-change: transform, opacity, box-shadow, filter;
+}
+
+.header-hide {
+    transform: translateY(-120%);
+    opacity: 0.1;
+    pointer-events: none;
+    filter: blur(2px) grayscale(0.2);
+    box-shadow: none;
+}
+
+.header-show {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+    filter: none;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.13), 0 1.5px 6px rgba(0,0,0,0.08);
+    animation: headerPopIn 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+
+@keyframes headerPopIn {
+    0% {
+        transform: translateY(-60%) scale(0.98);
+        opacity: 0.2;
+        filter: blur(2px);
+    }
+    80% {
+        transform: translateY(2%) scale(1.01);
+        opacity: 1;
+        filter: blur(0.5px);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        filter: none;
+    }
+} 

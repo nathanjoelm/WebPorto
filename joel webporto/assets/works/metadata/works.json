@@ -1,0 +1,41 @@
+{
+    "works": [
+        {
+            "id": "project1",
+            "title": "Title of Project",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna feugiat maecenas eu imperdiet varius nec pulvinar sem ultrices.",
+            "category": "UI/UX",
+            "thumbnail": "assets/works/thumbnails/project1.jpg",
+            "video": "assets/works/videos/project1.mp4",
+            "link": "https://project1.com",
+            "featured": true
+        },
+        {
+            "id": "project2",
+            "title": "Creative Animation",
+            "description": "Professional motion graphics and animation work showcasing brand storytelling.",
+            "category": "Animation",
+            "thumbnail": "assets/works/thumbnails/project2.jpg",
+            "video": "assets/works/videos/project2.mp4",
+            "link": "https://project2.com",
+            "featured": true
+        },
+        {
+            "id": "project3",
+            "title": "Brand Identity",
+            "description": "Complete brand identity design including logo, guidelines, and marketing materials.",
+            "category": "Branding",
+            "thumbnail": "assets/works/thumbnails/project3.jpg",
+            "video": "assets/works/videos/project3.mp4",
+            "link": "https://project3.com",
+            "featured": false
+        }
+    ],
+    "categories": [
+        "All",
+        "UI/UX",
+        "Animation",
+        "Branding",
+        "Motion Graphics"
+    ]
+} 
